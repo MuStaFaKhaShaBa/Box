@@ -4,10 +4,10 @@
   box-sizing: border-box;
 }
 body {
-  padding: 100px;
+  padding: 50px;
   display: flex;
   justify-content: space-around;
-  align-items: space-around;
+  align-items: center;
   min-height: 100vh;
   background: #000;
   animation: bodyBack 10s linear infinite alternate;
@@ -15,6 +15,10 @@ body {
 .container {
   width: 200px;
   height: 200px;
+  @media (max-width:767px) {
+    width: 50px;
+    height: 50px;
+  }
   position: relative;
   //background-color: #f00;
   transform-style: preserve-3d;
@@ -28,17 +32,23 @@ body {
     left: 0;
     transform-style: preserve-3d;
     transform: rotatex(90deg) translateZ(100px);
+    @media (max-width:767px) {
+        transform: rotatex(90deg) translateZ(25px);
+      }
     &::after {
       content: "";
       position: absolute;
       top: 0;
       left: 0;
       background-color: #00ec00;
-      width: 200px;
-      height: 200px;
+      width: 100%;
+      height: 100%;
       filter: blur(20px);
       box-shadow: 0 0 20px 10px #00ec00;
       transform: translateZ(-300px);
+      @media (max-width:767px) {
+        transform: translateZ(-100px);
+      }
     }
   }
   .parent {
@@ -54,6 +64,9 @@ body {
       height: 100%;
       position: absolute;
       transform: rotatey(calc(90deg * var(--i))) translateZ(99px);
+      @media (max-width:767px) {
+        transform: rotatey(calc(90deg * var(--i))) translateZ(25px);
+    }
     }
   }
 }
@@ -87,12 +100,14 @@ body {
 h1{
     color: white;
     position:absolute;
-    top: 80%;
+    top: 90%;
     left: 50%;
-    font-size: 50px;
+    font-size: 40px;
     transform: translate(-50%,-50%);
     animation: h1color 10s linear infinite alternate;
-
+    @media (max-width:767px) {
+      font-size: 20px;
+    }
 }
 @keyframes animate {
   0% {
