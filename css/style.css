@@ -140,11 +140,12 @@ h1 {
           transform: translate(-50%, -50%);
   -webkit-animation: h1color 10s linear infinite alternate;
           animation: h1color 10s linear infinite alternate;
+  text-align: center;
 }
 
 @media (max-width: 767px) {
   h1 {
-    font-size: 20px;
+    font-size: 17px;
   }
 }
 
